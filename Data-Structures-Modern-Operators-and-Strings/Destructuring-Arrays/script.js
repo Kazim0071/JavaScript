@@ -1,4 +1,4 @@
-"sue strict";
+"use strict";
 
 const restaurant = {
   name: "Classico Italiano",

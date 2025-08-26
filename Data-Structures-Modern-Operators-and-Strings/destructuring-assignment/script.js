@@ -198,3 +198,4 @@ console.log(thirdBook)
 // In the result of your destructuring, the ratings variable should store a number 4.19, and the ratingsCount variable should store a number 144584.
 
 
+xyz

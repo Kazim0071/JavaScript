@@ -193,3 +193,8 @@ const books = [
 // 1.2 Log the titles of firstBook and secondBook.
 const [, ,thirdBook] = books;
 console.log(thirdBook)
+
+// 1.3 Below is the nested ratings array that contains two other arrays. Destructure the nested ratings arrays into two variables called rating and ratingsCount. 
+// In the result of your destructuring, the ratings variable should store a number 4.19, and the ratingsCount variable should store a number 144584.
+
+

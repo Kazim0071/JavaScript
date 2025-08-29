@@ -28,10 +28,10 @@ console.log(first, second);
 let [main, , secondary] = restaurant.categories;
 console.log(main, secondary);
 
-// const temp = main;
-// main = secondary;
-// secondary = temp;
-// console.log(main, secondary);
+const temp = main;
+main = secondary;
+secondary = temp;
+console.log(main, secondary);
 
 [secondary, main] = [main, secondary];
 console.log(main, secondary);

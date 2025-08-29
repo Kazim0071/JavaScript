@@ -56,13 +56,13 @@ const {sat, ...weakHours} = restaurant.openingHours;
 console.log(weakHours)
 
 // Function:
-const add = (...numbers) => {
-    let sum = 0;
+// const add = (...numbers) => {
+//     let sum = 0;
 
-    for (let i = 0; i < numbers.length; i++) {
-        sum += numbers[i];
-    }
-}
+//     for (let i = 0; i < numbers.length; i++) {
+//         sum += numbers[i];
+//     }
+// }
 
 
 add(2, 3, 4);

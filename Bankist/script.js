@@ -80,6 +80,47 @@ const displayMovements = function (movements) {
 };
 
 displayMovements(account1.movements);
+
+const calcDisplayBalance = function (movements) {
+  const balance = movements.reduce((acc, mov) => acc + mov, 0);
+  labelBalance.textContent = `${balance} EUR`;
+};
+
+calcDisplayBalance(account1.movements);
+
+const calcDisplaySummary = function (movements) {
+  const incomes = movements
+    .filter((mov) => mov > 0)
+    .reduce((acc, mov) => acc + mov, 0);
+
+  labelSumIn.textContent = `${incomes}€`;
+
+  const outcomes = movements
+    .filter((mov) => mov < 0)
+    .reduce((acc, mov) => acc + mov, 0);
+  labelSumOut.textContent = `${Math.abs(outcomes)}€`;
+
+  const interest = movements
+    .filter((mov) => mov > 0)
+    .map((deposit) => (deposit * 1.2) / 100)
+    .filter((int) => int >= 1)
+    .reduce((acc, int) => acc + int, 0);
+  labelSumInterest.textContent = `${interest}€`;
+};
+
+calcDisplaySummary(account1.movements);
+
+const createUsernames = function (accs) {
+  accs.forEach(function (acc) {
+    acc.username = acc.owner
+      .toLowerCase()
+      .split(" ")
+      .map((name) => name[0])
+      .join();
+  });
+};
+createUsernames(accounts);
+
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES
@@ -90,32 +131,57 @@ const currencies = new Map([
   ["GBP", "Pound sterling"],
 ]);
 
-// const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
-const julia1 = [3, 5, 2, 12, 7];
-const kate1 = [4, 1, 15, 8, 3];
+// const julia1 = [3, 5, 2, 12, 7];
+// const kate1 = [4, 1, 15, 8, 3];
 
-const julia2 = [9, 16, 6, 8, 3];
-const kate2 = [10, 5, 6, 1, 4];
+// const julia2 = [9, 16, 6, 8, 3];
+// const kate2 = [10, 5, 6, 1, 4];
 
-const checkDogs = function (dogsJulia, dogsKate){
-  console.log(dogsJulia)
-  const dogsJuliaCorrected = dogsJulia.slice();
-  dogsJuliaCorrected.splice(0,1)
-  dogsJuliaCorrected.splice(-2)
-  console.log(dogsJuliaCorrected)
+// const checkDogs = function (dogsJulia, dogsKate) {
+//   console.log(dogsJulia);
+//   const dogsJuliaCorrected = dogsJulia.slice();
+//   dogsJuliaCorrected.splice(0, 1);
+//   dogsJuliaCorrected.splice(-2);
+//   console.log(dogsJuliaCorrected);
 
-  const dogs = dogsJuliaCorrected.concat(dogsKate)
-  console.log(dogs)
+//   const dogs = dogsJuliaCorrected.concat(dogsKate);
+//   console.log(dogs);
 
-  dogs.forEach(function(dog, i){
-    if(dog >= 3){
-      console.log(`Dog number ${i+1} is an adult, and is ${dog} years old`)
-    } else {
-      console.log(`Dog number ${i+1} is still a puppy 🐶`)
-    }
-  })
+//   dogs.forEach(function (dog, i) {
+//     if (dog >= 3) {
+//       console.log(`Dog number ${i + 1} is an adult, and is ${dog} years old`);
+//     } else {
+//       console.log(`Dog number ${i + 1} is still a puppy 🐶`);
+//     }
+//   });
+// };
+// // checkDogs([3, 5, 2, 12, 7], [4, 1, 15, 8, 3])
+// checkDogs([9, 16, 6, 8, 3], [10, 5, 6, 1, 4]);
 
-}
-// checkDogs([3, 5, 2, 12, 7], [4, 1, 15, 8, 3])
-checkDogs([9, 16, 6, 8, 3], [10, 5, 6, 1, 4])
+// const user = "Steven Thomas Williams";
+
+// const deposits = movements.filter((mov) => mov > 0);
+// const withdrawal = movements.filter((mov) => mov < 0);
+// const balance = movements.reduce((acc, cur) => acc + cur, 0);
+
+const eurToUsd = 1.1;
+const totalDepositsUSD = movements
+  .filter(mov > 0)
+  .map((mov) => mov * eurToUsd)
+  .reduce((acc, mov) => acc + mov, 0);
+
+const DATA1 = [5, 2, 4, 1, 15, 8, 2];
+const DATA2 = [16, 6, 10, 5, 6, 1, 4];
+
+const calcHumanAge = (humanAge) => {
+  const age = DATA1.concat(DATA2)
+    .map((age) => age * 2)
+    .filter((age) => age >= 10)
+    .reduce((acc, age) => acc + age, 0);
+
+  console.log(age);
+};
+
+calcHumanAge();

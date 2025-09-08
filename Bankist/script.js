@@ -279,6 +279,7 @@ console.log([...arr, ...arr2]);
 console.log(letters.join(' - '));
 
 
+<<<<<<< Updated upstream
 ///////////////////////////////////////
 // The new at Method
 const arr = [23, 11, 64];
@@ -995,3 +996,24 @@ console.log(dogsGroupedByOwners);
 const dogsSorted = dogs.toSorted((a, b) => a.recFood - b.recFood);
 console.log(dogsSorted);
 */
+=======
+// const eurToUsd = 1.1;
+// const totalDepositsUSD = movements
+//   .filter(mov > 0)
+//   .map((mov) => mov * eurToUsd)
+//   .reduce((acc, mov) => acc + mov, 0);
+
+// const DATA1 = [5, 2, 4, 1, 15, 8, 2];
+// const DATA2 = [16, 6, 10, 5, 6, 1, 4];
+
+// const calcHumanAge = (humanAge) => {
+//   const age = DATA1.concat(DATA2)
+//     .map((age) => age * 2)
+//     .filter((age) => age >= 10)
+//     .reduce((acc, age) => acc + age, 0);
+
+//   console.log(age);
+// };
+
+// calcHumanAge();
+>>>>>>> Stashed changes

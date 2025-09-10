@@ -4,8 +4,8 @@ import React from 'react'
 //     return <li><button onClick={props.onSelect}>{props.children}</button></li>
 // }
 
-export default function TabButton({children, onSelect}) {
-    return <li><button onClick={onSelect}>{children}</button></li>;
+export default function TabButton({children, onSelect, isSelect}) {
+    return <li><button onClick={onSelect} className={isSelect ? 'active' : ''}>{children}</button></li>;
 }
 
 // export default function TabButton({label}) {

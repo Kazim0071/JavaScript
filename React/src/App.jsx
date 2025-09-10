@@ -1,35 +1,45 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from "react";
+import { CORE_CONCEPTS } from './data.js'
+import  Header  from "./components/Header/Header.jsx";
+import TabButton from "./components/TabButton.jsx";
+import CoreConcept from "./components/CoreConcept.jsx";
+
 
 function App() {
-  const [count, setCount] = useState(0)
+ function handleClick(selectedButton){
+        console.log('You clicked the button:', selectedButton);
+    }
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div>
+      <Header />
+      <main >
+        <section id="core-concepts">
+          <h2>Core Concepts</h2>
+          <ul>
+            <CoreConcept
+              title={CORE_CONCEPTS[0].title}
+              description={CORE_CONCEPTS[0].description}
+              image={CORE_CONCEPTS[0].image}
+            />
+            <CoreConcept {...CORE_CONCEPTS[1]} />
+            <CoreConcept {...CORE_CONCEPTS[2]} />
+            <CoreConcept {...CORE_CONCEPTS[3]} />
+          </ul>
+        </section>
+        <section id="examples">
+          <h2>Examples</h2>
+          <menu>
+            {/* <TabButton label="Components"/> */}
+            <TabButton onSelect={()=> handleClick('Componentes')}>Componentes</TabButton>
+            <TabButton onSelect={()=> handleClick('JSX')}>JSX</TabButton>
+            <TabButton onSelect={()=> handleClick('Props')}>Props</TabButton>
+            <TabButton onSelect={()=> handleClick('State')}>State</TabButton>
+          </menu>
+        </section>
+      </main>
+    </div>
+  );
 }
 
-export default App
+export default App;

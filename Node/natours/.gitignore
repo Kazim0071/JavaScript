@@ -1,0 +1,73 @@
+# Node.js dependencies
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+pnpm-lock.yaml
+
+# Logs
+logs
+*.log
+logs/*.log
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Runtime data
+tmp/
+temp/
+*.tmp
+*.temp
+*.swp
+*.swo
+
+# Build output
+dist/
+build/
+.cache/
+
+# Coverage directory
+coverage/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Editor directories and files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Optional stylelint cache
+.stylelintcache
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Optional REPL history
+.node_repl_history
+
+# Test results
+test-results/
+
+# PM2 log files
+.pm2/logs/
+
+# VS Code settings folder
+.vscode/
+
+# MacOS files
+*.DS_Store

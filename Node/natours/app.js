@@ -21,13 +21,8 @@ app.use((req, res, next) => {
 })
 
 
-
-
-
 const tourRouter = express.Router();
 const userRouter = express.Router();
-
-
 
 // Routes
 // app.get('/api/v1/tours', getAllTours)
@@ -35,10 +30,6 @@ const userRouter = express.Router();
 // app.get('/api/v1/tours/:id', getTour)
 // app.patch('/api/v1/tours/:id', updateTour)
 // app.delete('/api/v1/tours/:id', deleteTour)
-
-
-
-
 
 
 app.use('/api/v1/tours', router)
